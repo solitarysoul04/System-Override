@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset = "UTF-8">
+        <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+        <title>System Booting...</title>
+        <style>
+            body {
+                background-color: #050505;
+                color: #00ff00;
+                font-family: 'Courier New', Courier, monospace;
+                margin: 0;
+                padding: 20px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 90vh;
+            }
+            .terminal {
+                background-color: #1a1a1a;
+                border: 4px solid #ffffff;
+                box-shadow: 12px 12px 0px #FFD700;
+                max-width: 700px;
+                width: 100%;
+                padding: 30px;
+            }
+
+            .syslog {
+                margin: 8px 0;
+                font-size: 1.1rem;
+            }
+            .errorlnk {
+                display: block;
+                margin-top: 30px;
+                padding: 15px;
+                background-color: #ff3333;
+                color: #ffffff;
+                text-align: center;
+                text-decoration: none;
+                font-weight: bold;
+                font-size: 1.2rem;
+                border: 2px solid #ffffff;
+                animation: blinker 1.5s linear infinite;
+            }
+
+            .errorlnk:hover {
+                background-color: #ffffff;
+                color: #ff3333;
+                box-shadow: 6px 6px 0px #ff3333;
+            }
+            .cursor{
+                display: inline-block;
+                width: 10px;
+                height: 1em;
+                background-color: #00ff00;
+                animation: blink 1s step-end infinite;
+                vertical-align: middle;
+            }
+            @keyframes blink {
+                0%, 100% {opacity:1;}
+                50% {opacity:0;}
+            }
+
+            @keyframes blinker {
+                50% {opacity:0.8;}
+            }
+        </style>
+    </head>
+    <body>
+        <main class = "terminal">
+            <div class = "syslog">
+                <p> [OK] Power ON: Raspberry Pi 4B Detected.</p>
+                <p> [OK] Initializing ESP32 Serial Communication...</p>
+                <p> [OK] Initializing rpicam-vid stream...</p>
+                <p> [OK] Ignoring 14 deprecated warnings in OpenCV...</p>
+                <p> [OK] Serving boba_bash_v3.html on port 8080...</p>
+                <p> [OK] Calibrating lunar exposure settings...</p>
+                <p style="color: #ffcc00;"> [WARN] ESP32 dropped off the netwrok again. Standard.</p>
+                <p style="color: #ffcc00;"> [WARN] CSS Flexbox layout collapsed into a black hole.</p>
+                <p style="color: #ffcc00;"> [WARN] Uncaught TypeError: 'undefined' is not a valid human connection.</p>
+                <p style="color: #ff3333;"> [ERR] Fatal Logic Fault: Cannot compile human_emotion.py</p>
+                <p> [SYS] Awaiting manual intervention... <span class = "cursor"></span></p>
+            </div>
+
+            <a href = "override.html" class = "errorlnk">
+                [CRITICAL ERROR: CLICK HERE TO OVERRIDE SYSTEM]
+            </a>
+        </main>
+    </body>
+</html>
